@@ -10,7 +10,7 @@ use std::{
     path::{Path, PathBuf},
 };
 
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Clone, Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub struct InterfaceConfig {
     /// The information to bring up the interface.
@@ -20,7 +20,7 @@ pub struct InterfaceConfig {
     pub server: ServerInfo,
 }
 
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Clone, Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub struct InterfaceInfo {
     /// The interface name (i.e. "tonari")
@@ -37,7 +37,7 @@ pub struct InterfaceInfo {
     pub listen_port: Option<u16>,
 }
 
-#[derive(Deserialize, Serialize, Debug)]
+#[derive(Clone, Deserialize, Serialize, Debug)]
 #[serde(rename_all = "kebab-case")]
 pub struct ServerInfo {
     /// The server's WireGuard public key
