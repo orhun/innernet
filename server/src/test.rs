@@ -157,7 +157,6 @@ impl Server {
             .method("PUT")
             .header("Content-Type", "application/json")
     }
-
 }
 
 pub fn create_cidr(db: &Connection, name: &str, cidr_str: &str) -> Result<Cidr> {
